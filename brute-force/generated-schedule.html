@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Schedule</title>
+    <link rel="shortcut icon" href="img/ball.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>BRUTE FORCE SCHEDULE</h1>
+    </header>
+
+    <section class="schedule-features">
+        <h3>Optimized Scheduling Algorithm Features:</h3>
+        <ul>
+            <li><strong>Conflict-Free Scheduling</strong>: Meticulously designed to prevent scheduling overlaps.</li>
+            <li><strong>Guaranteed Rest Periods</strong>: Each team enjoys a break of <strong>1-2 days</strong> between games, ensuring optimal performance.</li>
+            <li><strong>Unique Game Days</strong>: No two teams will play on the same day, promoting fairness and viewer engagement.</li>
+            <li><strong>Conference Matchups</strong>:
+                <ul>
+                    <li>Teams within the same conference compete <strong>four times</strong>.</li>
+                    <li>Interconference matchups are limited to <strong>two games</strong> per team.</li>
+                </ul>
+            </li>
+            <li>
+                <b>Refresh</b> to generate again.
+            </li>
+        </ul>
+    </section>
+    <br>
+    <div id="scheduleDiv"></div>
+
+    <script src="script/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', generateAndDisplaySchedule);
+    </script>
+</body>
+
+</html>

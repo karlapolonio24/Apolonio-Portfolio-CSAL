@@ -1,0 +1,241 @@
+body {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.league__title {
+  font-size: 54px;
+  text-align: center;
+}
+
+.teams__div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 30px;
+  justify-content: center;
+  max-width: 750px;
+  margin: auto;
+  margin-bottom: 50px;
+  font-size: 36px;
+}
+
+.team__logo {
+  width: 150px;
+  height: 100px;
+}
+
+.team__conference {
+  grid-column: span 6; /* Span the entire row for conference labels */
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px; /* Adjust space below conference labels */
+}
+
+.link-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.teams__div{
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+  /* Small screens */
+  .teams__div {
+      grid-template-columns: repeat(3, 1fr); /* Adjusted for small screens */
+      font-size: 36px; /* Adjusted font size for small screens */
+  }
+
+  .team__logo {
+      width: 100px; /* Adjusted width for small screens */
+      height: 70px; /* Adjusted height for small screens */
+  }
+
+  .team__conference {
+      font-size: 16px; /* Adjusted font size for team conferences on small screens */
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Medium screens */
+  .teams__div {
+      grid-template-columns: repeat(3, 1fr); /* Adjusted for medium screens */
+      font-size: 36px; /* Adjusted font size for medium screens */
+  }
+
+  .team__logo {
+      width: 120px; /* Adjusted width for medium screens */
+      height: 80px; /* Adjusted height for medium screens */
+  }
+
+  .team__conference {
+      font-size: 20px; /* Adjusted font size for team conferences on medium screens */
+  }
+}
+
+.divider {
+  display: none; /* Default: hide the divider */
+  grid-column: 1 / -1; /* Span the entire width of the grid */
+  height: 2px; /* Height of the divider line */
+  background-color: #000; /* Color of the divider line */
+  margin: 20px 0; /* Space above and below the divider */
+}
+
+.generate__brackets__link{
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.generate__brackets__linkfocus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.generate__brackets__link:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.generate__brackets__link:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+#scheduleDiv {
+  margin-top: 10px;
+}
+
+.matchup-date {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Adds space between the date and the table */
+}
+
+.versus {
+  padding: 20px;
+}
+
+.h3__date {
+  margin-right: 40px;
+}
+
+.schedule-table {
+  width: 100%; /* Takes the full width of its container */
+  border-collapse: collapse; /* Collapses cell borders into a single border */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow around the table for depth */
+  text-align: center; /* Centers text in cells */
+  margin-bottom: 20px; /* Adds space below the table */
+}
+
+.schedule-table th, .schedule-table td {
+  border: 1px solid #ddd; /* Lighter border color for a softer look */
+  padding: 12px 8px; /* Adjusts padding for better spacing and readability */
+  padding: 20px; /* Adds some padding inside cells for better readability */
+}
+
+.schedule-table th {
+  background-color: #007bff; /* A pleasant blue header background */
+  color: white; /* White text for contrast */
+  text-transform: uppercase; /* Makes header text uppercase for emphasis */
+}
+
+.schedule-table td {
+  background-color: #f9f9f9; /* A very light gray background for rows */
+}
+
+.team__logo {
+  width: 75px; /* Adjusts logo width */
+  height: auto; /* Keeps the aspect ratio of logos */
+}
+
+.schedule-table tr:nth-child(even) td {
+  background-color: white; /* Alternates row color for better readability */
+}
+
+.schedule-table tr:hover {
+  background-color: #f1f1f1; /* Adds a hover effect to rows for interactivity */
+  cursor: pointer; /* Changes cursor to pointer to indicate clickable rows */
+}
+
+/* Optional: Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .schedule-table, .schedule-table th, .schedule-table td {
+    padding: 10px; /* Reduces padding on smaller screens */
+  }
+
+  .matchup-date {
+    flex-direction: column; /* Stacks date and versus information vertically */
+    text-align: center; /* Centers the text for a better mobile view */
+  }
+
+  .h3__date {
+    margin-right: 0; /* Removes margin to accommodate the vertical stacking */
+  }
+}
+
+.loading__overlay{
+  display: none; 
+  position: fixed; 
+  width: 100%; 
+  height: 100%; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  line-height: 100vh;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* This covers both small and medium devices up to 1024px width */
+  .divider {
+      display: block; /* Make the divider visible */
+  }
+
+  .team__conference {
+      font-size: 20px; /* Increase font size for better visibility */
+  }
+
+  .teams__div {
+      grid-template-columns: repeat(3, 1fr); /* Adjust grid layout for small and medium screens */
+  }
+
+  /* Adjust the .team__logo size if needed */
+  .team__logo {
+      width: 80px; /* Adjust logo size for smaller screens */
+      height: auto; /* Maintain aspect ratio */
+  }
+}

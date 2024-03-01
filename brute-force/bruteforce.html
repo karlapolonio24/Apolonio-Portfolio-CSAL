@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brute Force Algorithm</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/ball.jpg" type="image/x-icon">
+    </head>
+    <body>
+        <h1 class="league__title">BRUTE FORCE LEAGUE</h1>
+        <br>
+        <div class="teams__div">
+            WEST
+            <img src="img/lakers-logo.png" alt="LAL" class="team__logo">
+            <img src="img/warriors-logo.png" alt="GSW" class="team__logo">
+            <img src="img/okc-logo.png" alt="OKC" class="team__logo">
+            <img src="img/wolves-logo.png" alt="MIN" class="team__logo">
+            <img src="img/mavericks-logo.png" alt="DAL" class="team__logo">
+            <div class="divider"></div>
+            EAST
+            <img src="img/heat-logo.png" alt="MIA" class="team__logo">
+            <img src="img/knicks-logo.png" alt="NYK" class="team__logo">
+            <img src="img/hornets-logo.png" alt="CHA" class="team__logo">
+            <img src="img/celtics-logo.png" alt="BOS" class="team__logo">
+            <img src="img/bulls-logo.png" alt="CHI" class="team__logo">
+        </div>
+        <br>
+        <div class="link-button-container">
+            <a href="generated-schedule.html" id ="generateSchedule" class="generate__brackets__link" target="_self">Generate Schedule</a>
+        </div>
+    </body>
+    <!-- Loading Overlay (hidden by default) -->
+    <div id="loadingOverlay" class="loading__overlay">Generating Schedule...</div>
+
+    <script src="script/main.js"></script>
+    <script>
+        document.getElementById("generateSchedule").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link action
+            document.getElementById("loadingOverlay").style.display = "block"; // Show the loading overlay
+
+            // Simulate a loading time (e.g., 2 seconds) then navigate
+            setTimeout(() => {
+                window.open('generated-schedule.html', "_self");
+            }, 2000); // Adjust time as needed
+        });
+    </script>
+</html> 
