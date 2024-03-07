@@ -1338,8 +1338,11 @@ body.dark-theme{
   .projects__card{
     padding: 1.25rem 1.25rem 2.5rem;
   }
-  .projects__image{
+  .projects__image img{
     margin-bottom: 1rem;
+    width: 100%; 
+    height: 175px; 
+    object-fit: cover;
   }
   .projects__content{
     margin-bottom: 2rem;

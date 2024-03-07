@@ -153,6 +153,8 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow around the table for depth */
   text-align: center; /* Centers text in cells */
   margin-bottom: 20px; /* Adds space below the table */
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .schedule-table th, .schedule-table td {
@@ -239,3 +241,4 @@ body {
       height: auto; /* Maintain aspect ratio */
   }
 }
+
