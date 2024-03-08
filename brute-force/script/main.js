@@ -1,5 +1,3 @@
-const teams = ["Celtics", "Heat", "Lakers", "Warriors", "Mavericks", "Knicks", "OKC", "Wolves", "Bulls", "Hornets"];
-
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -7,23 +5,21 @@ function shuffle(array) {
     }
 }
 
-function splitConferences(teams) {
-    shuffle(teams);
-    return [teams.slice(0, 5), teams.slice(5)];
-}
-
 function generateMatchups(conferenceTeams) {
     let matchups = [];
     for (let i = 0; i < conferenceTeams.length; i++) {
         for (let j = i + 1; j < conferenceTeams.length; j++) {
-            matchups.push([conferenceTeams[i], conferenceTeams[j]], [conferenceTeams[i], conferenceTeams[j]]);
-            matchups.push([conferenceTeams[j], conferenceTeams[i]], [conferenceTeams[j], conferenceTeams[i]]);
+            matchups.push([conferenceTeams[i], conferenceTeams[j]], 
+                [conferenceTeams[i], conferenceTeams[j]]);
+            matchups.push([conferenceTeams[j], conferenceTeams[i]], 
+                [conferenceTeams[j], conferenceTeams[i]]);
         }
     }
     return matchups;
 }
 
-function crossConferenceMatchups(east, west) {
+function crossConferenceMatchups(east, west)
+{
     let matchups = [];
     for (let e of east) {
         for (let w of west) {
@@ -33,7 +29,7 @@ function crossConferenceMatchups(east, west) {
     return matchups;
 }
 
-function createSchedule(east, west) {
+function createSchedule(east, west, teams) {
     let schedule = [];
     const eastMatchups = generateMatchups(east);
     const westMatchups = generateMatchups(west);
@@ -45,7 +41,9 @@ function createSchedule(east, west) {
     let scheduleDate = new Date();
     const gamesPerDay = 5;
     let restDaysTeam = {};
-    teams.forEach(team => restDaysTeam[team] = new Date(scheduleDate.getTime() - 86400000)); // Set to 'yesterday'
+    teams.forEach(team => restDaysTeam[team] = 
+        new Date(scheduleDate.getTime() - 86400000)); 
+    // Set to 'yesterday'
 
     while (allGames.length > 0) {
         let dayGames = [];
@@ -53,7 +51,9 @@ function createSchedule(east, west) {
             allGames = allGames.filter(game => {
                 const lastPlayedHome = restDaysTeam[game[0]];
                 const lastPlayedAway = restDaysTeam[game[1]];
-                if (scheduleDate > new Date(lastPlayedHome.getTime() + 86400000) && scheduleDate > new Date(lastPlayedAway.getTime() + 86400000)) {
+                if (scheduleDate > new Date(lastPlayedHome.getTime() + 86400000) 
+                && scheduleDate > new Date(lastPlayedAway.getTime() + 86400000)) 
+                {
                     dayGames.push(game);
                     restDaysTeam[game[0]] = new Date(scheduleDate);
                     restDaysTeam[game[1]] = new Date(scheduleDate);
@@ -65,19 +65,12 @@ function createSchedule(east, west) {
         }
 
         if (dayGames.length > 0) {
-            dayGames.forEach(game => schedule.push({ "date": new Date(scheduleDate), "matchup": game }));
+            dayGames.forEach(game =>  schedule.push({ "date": new Date(scheduleDate), "matchup": game }));
         }
         scheduleDate = new Date(scheduleDate.getTime() + 86400000); // Increment day
     }
 
     return schedule;
-}
-
-function printSchedule(schedule) {
-    schedule.forEach(game => {
-        const dateStr = game.date.toISOString().substring(0, 10);
-        console.log(`${dateStr}: ${game.matchup[0]} vs ${game.matchup[1]}`);
-    });
 }
 
 function displaySchedule(schedule) {
@@ -135,14 +128,14 @@ function displaySchedule(schedule) {
 
     // Append the table to the scheduleDiv
     scheduleDiv.appendChild(table);
-
 }
 
 
 function generateAndDisplaySchedule() {
     const east = ["Celtics", "Heat", "Knicks", "Bulls", "Hornets"];
-    const west = ["Lakers", "Mavericks", "OKC", "Warriors", "Wolves"]
-    const schedule = createSchedule(east, west);
+    const west = ["Lakers", "Mavericks", "OKC", "Warriors", "Wolves"];
+    const teams = east.concat(west);
+    const schedule = createSchedule(east, west, teams);
     displaySchedule(schedule);
 }
 
