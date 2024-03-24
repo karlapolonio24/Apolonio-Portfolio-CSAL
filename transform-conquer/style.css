@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #DDDDDD; /* Light gray */
+}
+#matrixInput {
+    background-color: #EEEEEE; /* Lighter gray */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #627254; /* Olive green */
+}
+.button-container {
+    text-align: center; /* Center the button within this container */
+}
+
+.equation-row { 
+    margin-bottom: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.equation-input { 
+    width: 50px; 
+    margin: 0 5px; 
+    border: 1px solid #76885B; /* Dark olive */
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #DDDDDD; /* Light gray */
+}
+button {
+    cursor: pointer;
+    background-color: #76885B; /* Dark olive */
+    color: #EEEEEE; /* Lighter gray */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #627254; /* Olive green */
+}
+#solution { 
+    margin-top: 20px; 
+    color: #627254; /* Olive green */
+}

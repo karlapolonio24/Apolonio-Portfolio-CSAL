@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaussian Elimination Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="matrixInput">
+        <h1>Gaussian Elimination Calculator</h1>
+        <p>Enter your equations:</p>
+        <!-- Equation Rows -->
+        <div class="equation-row">
+            <input type="number" class="equation-input" id="a11">X<sub>1</sub>&nbsp;+&nbsp;
+            <input type="number" class="equation-input" id="a12">X<sub>2</sub>&nbsp;+&nbsp;
+            <input type="number" class="equation-input" id="a13">X<sub>3</sub>&nbsp;
+            = &nbsp;
+            <input type="number" class="equation-input" id="b1">
+        </div>
+        <div class="equation-row">
+            <input type="number" class="equation-input" id="a21">X<sub>1</sub>&nbsp;+&nbsp;
+            <input type="number" class="equation-input" id="a22">X<sub>2</sub>&nbsp;+&nbsp;
+            <input type="number" class="equation-input" id="a23">X<sub>3</sub>&nbsp;
+            = &nbsp;
+            <input type="number" class="equation-input" id="b2">
+        </div>
+        <div class="equation-row">
+            <input type="number" class="equation-input" id="a31">X<sub>1</sub>&nbsp;+&nbsp;
+            <input type="number" class="equation-input" id="a32">X<sub>2</sub>&nbsp;+&nbsp;
+            <input type="number" class="equation-input" id="a33">X<sub>3</sub>&nbsp;
+            = &nbsp;
+            <input type="number" class="equation-input" id="b3">
+        </div>
+        <div class="button-container">
+            <button onclick="solve()">Solve</button>
+        </div>
+        <div id="solution"></div>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
