@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #DDDDDD; /* Light gray */
+    background-color: hsl(0, 0%, 83%); /* Light gray */
 }
 #matrixInput {
     background-color: #EEEEEE; /* Lighter gray */
