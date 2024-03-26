@@ -52,5 +52,6 @@ function solve() {
     }
 
     let solution = gaussianElimination(matrix);
-    document.getElementById("solution").innerHTML = `<p>Solution: ${solution.map(x => isNaN(x) ? 'No solution' : x.toFixed(2)).join(', ')}</p>`;
+    document.getElementById("solution").innerHTML = `<p>Solution: ${solution.map(x => isNaN(x)
+         ? 'No solution' : x.toFixed(2)).join(', ')}</p>`;
 }
